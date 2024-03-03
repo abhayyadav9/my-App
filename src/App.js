@@ -7,12 +7,7 @@ import TextForm from "./components/TextForm";
 import { type } from "@testing-library/user-event/dist/type";
 // import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
-// import {
-//   BrowserRouter as Router,
-//   Switch,
-//   Route,
-//   Link
-// } from "react-router-dom"
+import { BrowserRouter as Router, Switch, Route, } from "react-router-dom";
 
 // let inpt = prompt("enter the title")
 
@@ -44,9 +39,7 @@ function App() {
 
   return (
     <>
-      {/* <Route> */}
-        {/* <Navbar title={inpt} about="about me"/> */}
-
+      <Router>
         <Navbar
           title="Text converter"
           about="about me"
@@ -57,23 +50,21 @@ function App() {
         <div>
           <Alert alert={alert} />
         </div>
-        <About mode={mode} />
-        <TextForm
+
+        <Switch>
+          <Route exact path="/about">
+            <About mode={mode} />
+          </Route>
+
+          <Route path="/textform">
+            <TextForm
               showAlert={showAlert}
               heading="Hello i am Text Converter"
               mode={mode}
             />
-{/* 
-        <Switch>
-          <Route path="/about">
-            
-          </Route>
-
-          <Route path="/textform">
-           
           </Route>
         </Switch>
-      </Route> */}
+      </Router>
     </>
   );
 }

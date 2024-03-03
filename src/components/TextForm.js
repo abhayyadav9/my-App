@@ -71,10 +71,11 @@ export default function TextForm(props) {
             rows="10"
             value={text}
             style={{
-              backgroundColor: props.mode === "light" ? "white" : "grey",
+              backgroundColor: props.mode === "light" ? "white" : "black",
               color: props.mode === "light" ? "black" : "white",
+              fontSize:"20px"
             }}
-            placeholder="Please write somethings"
+            placeholder="Please write somethings "
           ></textarea>
         </div>
 

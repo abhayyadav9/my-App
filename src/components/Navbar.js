@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import React from "react";
 
 import PropTypes from "prop-types";
@@ -10,9 +11,9 @@ function Navbar(props) {
         className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}
       >
         <div className="container-fluid">
-          <a className="navbar-brand" href="/">
+          <Link className="navbar-brand" to="#">
             {props.title}
-            </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -27,30 +28,35 @@ function Navbar(props) {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/">
+                <Link
+                  className="nav-link active"
+                  aria-current="page"
+                  to="/textform"
+                >
                   Home
-                </a>
+                </Link>
               </li>
+                  {/*
               <li className="nav-item">
-                <a className="nav-link" href="/">
+                <Link className="nav-link" to="/">
                   Link
-                </a>
+                </Link>
               </li>
-              <li className="nav-item dropdown">
-                <a
+           <li className="nav-item dropdown">
+                <Link
                   className="nav-link dropdown-toggle"
-                  href="/"
+                  to="/"
                   role="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
                   Dropdown
-                </a>
+                </Link>
                 <ul className="dropdown-menu">
                   <li>
-                    <a className="dropdown-item" href="/">
+                    <Link className="dropdown-item" to="/">
                       Action
-                    </a>
+                    </Link>
                   </li>
                   <li>
                     <a className="dropdown-item" href="/">
@@ -66,11 +72,16 @@ function Navbar(props) {
                     </a>
                   </li>
                 </ul>
-              </li>
+              </li>--> */}
               <li className="nav-item">
-                <a className="nav-link disabled" aria-disabled="true">
+                <Link
+                  className="nav-link active"
+                  to="/about"
+                  aria-disabled="true"
+                >
+                  
                   {props.about}
-                </a>
+                </Link>
               </li>
             </ul>
             <form className="d-flex" role="search">
